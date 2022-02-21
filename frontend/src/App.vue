@@ -248,7 +248,7 @@ body {
   transition: all 0.5s ease;
   background: white;
   background: #F8EFBA;
-  background: #dff9fb;;
+  background: #dff9fb;
 
 }
 /*

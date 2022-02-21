@@ -1,6 +1,9 @@
 <template>
   <div class="home">
-    <Calendar />
+    <div style="width: 60%">
+      <div>Month: March</div>
+      <Calendar />
+    </div>
   </div>
 </template>
 
@@ -12,16 +15,12 @@ export default {
   name: 'Home',
   components: {
     Calendar
-  }
+  },
 }
 </script>
 
 <style scoped>
 .home{
-  padding-top: 25px;
-  padding-left: 250px;
-  padding-right: 250px
-  
-
+  padding: 25px;
 }
 </style>

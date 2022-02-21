@@ -31,6 +31,7 @@ export default {
 <style scoped>
 
 #dash-titlebar {
+
     display: flex;
     gap: 20px;
     align-items: center;

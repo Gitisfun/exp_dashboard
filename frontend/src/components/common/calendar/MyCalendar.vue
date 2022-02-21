@@ -1,79 +1,46 @@
 <template>
-  <div style="width: 90%">
-      <div class="calendar-grid-container">
-          <div class="calendar-grid-header" v-for="item in headerList" :key="item.id">{{ item.day }}</div>
-          <div class="calendar-grid-item" v-for="item in list" :key="item.id">
-              <div style="margin: 5px">
-                {{ item.day }}
-                <div class="test-ok">
-                    <div>test</div>
-                    <div>ok</div>
-                    <div>zefzfd </div>
-                    <div>efzef</div>
-                    <div>zrfjzeofi</div>
-                    <div>...</div>
-                </div>
-              </div>
-          </div>
-      </div>
-  </div>
+    <button @click="previous">Previous</button>
+    <button @click="next">Next</button>
+    <div class="calendar-grid-container">
+        <Header />
+        <Day :item="item" v-for="item in list" :key="item" />
+    </div>
 </template>
 
 <script>
-//import moment from "moment"
+import Day from './Day.vue'
+import Header from './Header.vue'
+import Calendar from '../../../logic/calendar/calendar.js'
 
 export default {
+  components: { Header, Day },
     name: "Calendar",
     data(){
         return {
-            headerList: [],
-            list: [],
+            calendar: null,
+            list: []
         }
     },
     created(){
-        this.headerList.push({ id: 1, day: "Mon"})
-        this.headerList.push({ id: 2, day: "Tue"})
-        this.headerList.push({ id: 3, day: "Wed"})
-        this.headerList.push({ id: 4, day: "Thu"})
-        this.headerList.push({ id: 5, day: "Fri"})
-        this.headerList.push({ id: 6, day: "Sat"})
-        this.headerList.push({ id: 7, day: "Sun"})
-        for(let i = 1; i < 31; i++) {
-            this.list.push({
-                id: i,
-                day: i,
-            })
+        this.calendar = new Calendar();
+        this.list = this.calendar.getList()
+    },
+    methods: {    
+        previous(){
+            this.list = this.calendar.previous()
+        },
+        next(){
+            this.list = this.calendar.next()
         }
     }
 }
 </script>
 
-<style>
-
+<style scoped>
 .calendar-grid-container {
     font-size: 12px;
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto;
     padding: 10px;
 }
-
-.calendar-grid-header {
-    margin-left: 10px;
-    margin-bottom: 5px;
-    text-align: left;
-}
-
-.calendar-grid-item {
-    border: 1px solid lightgrey;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding-bottom: 75%;
-    text-align: left;
-}
-
-.test-ok {
-    position: absolute;
-}
-
-
-
 </style>
