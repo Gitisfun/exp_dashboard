@@ -1,9 +1,8 @@
 <template>
-    <button @click="previous">Previous</button>
-    <button @click="next">Next</button>
+    <Bar :title="calendar.getNameOfCurrentMonth()" @previous="previous" @next="next" />
     <div class="calendar-grid-container">
         <Header />
-        <Day :item="item" v-for="item in list" :key="item" />
+        <Day @clicked="addEvent" :item="item" v-for="item in list" :key="item" />
     </div>
 </template>
 
@@ -11,9 +10,10 @@
 import Day from './Day.vue'
 import Header from './Header.vue'
 import Calendar from '../../../logic/calendar/calendar.js'
+import Bar from './Bar.vue'
 
 export default {
-  components: { Header, Day },
+  components: { Bar, Header, Day },
     name: "Calendar",
     data(){
         return {
@@ -31,6 +31,13 @@ export default {
         },
         next(){
             this.list = this.calendar.next()
+        },
+        addEvent(item){
+            console.log(item);
+            item.events.push({
+                id: 1,
+                name: "Okay aankoop"
+            })
         }
     }
 }

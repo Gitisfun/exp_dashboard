@@ -28,7 +28,7 @@ class Calendar {
     }
 
     getNameOfCurrentMonth(){
-        return this.currentDate.format("ddd")
+        return this.currentDate.format("MMMM")
     }
 
     previous() {
