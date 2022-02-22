@@ -1,8 +1,8 @@
 <template>
   <div id="calendar-bar">
-    <GenericBtn @clicked="previous" text="Previous" />
+    <GenericBtn @clicked="previous" text="< Previous" />
     <div id="calendar-bar-title" class="level-item">{{ title }}</div>
-    <GenericBtn @clicked="next" text="Next" />
+    <GenericBtn @clicked="next" text="Next >" />
   </div>
 </template>
 
