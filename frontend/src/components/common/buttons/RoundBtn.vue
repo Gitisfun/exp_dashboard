@@ -2,24 +2,29 @@
     <div class="wrapper">
     <div class="icon facebook">
         <div class="tooltip">Facebook</div>
-        <span><i class="fab fa-facebook-f"></i></span>
+        <span><i class="bx bxl-c-plus-plus"></i></span>
     </div>
     <div class="icon twitter">
         <div class="tooltip">Twitter</div>
-        <span><i class="fab fa-twitter"></i></span>
+        <i class='bx bx-message-detail'></i>
     </div>
     <div class="icon instagram">
         <div class="tooltip">Instagram</div>
-        <span><i class="fab fa-instagram"></i></span>
+        <span><i class='bx bxs-comment'></i></span>
     </div>
     <div class="icon github">
         <div class="tooltip">Github</div>
-        <span><i class="fab fa-github"></i></span>
+        <span><i class='bx bxs-comment'></i></span>
     </div>
     <div class="icon youtube">
         <div class="tooltip">Youtube</div>
-        <span><i class="fab fa-youtube"></i></span>
+        <span>
+
+        <i class='bx bx-chevron-right-square' ></i>
+        </span>
     </div>
+    <span><i class="bx bxs-check-square"></i></span>
+    <i class='bx bxs-check-square' ></i>
     </div>
 </template>
 
@@ -65,7 +70,7 @@ body {
 .wrapper .icon {
   position: relative;
   background-color: #ffffff;
-  border-radius: 50%;
+  border-radius: 5px;
   padding: 15px;
   margin: 10px;
   width: 50px;

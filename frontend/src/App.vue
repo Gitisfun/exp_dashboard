@@ -248,8 +248,16 @@ body {
   transition: all 0.5s ease;
   background: white;
   background: #F8EFBA;
-  background: #dff9fb;
-
+  background: #697070;
+  /* Template colors */
+  background: #ffeaa7;
+  background: #dfe6e9;
+  background: #74b9ff;
+  background: #38ada9;
+  background: #fad390;
+  background: #f8c291;
+  background: #6a89cc;
+  background: #82ccdd;
 }
 /*
 .content-body {

@@ -7,6 +7,7 @@ class Calendar {
         this.currentDate = DateHelper.getCurrentDate();
         this.startPosition = this.getSurplusOfMonth();
         this.daysOfMonth = this.getDaysOfMonth()
+        this.list = []
     }
 
     getDaysOfMonth() {
@@ -29,6 +30,12 @@ class Calendar {
 
     getNameOfCurrentMonth(){
         return this.currentDate.format("MMMM")
+    }
+
+    setEvents(list){
+        for(let i = 0; i < list.length; i++) {
+            console.log(list[i]);
+        }
     }
 
     previous() {
@@ -68,8 +75,14 @@ class Calendar {
                 tempDate = tempDate.clone().add(1, "day")
             }
         }
-        return temp
+        this.list = temp
+        console.log(this.list);
     }
+
+    setList(list){
+        this.list = list
+    }
+
 }
 
 export default Calendar

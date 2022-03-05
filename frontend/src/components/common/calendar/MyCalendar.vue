@@ -2,7 +2,7 @@
     <Bar :title="calendar.getNameOfCurrentMonth()" @previous="previous" @next="next" />
     <div class="calendar-grid-container">
         <Header />
-        <Day @clicked="addEvent" :item="item" v-for="item in list" :key="item" />
+        <Day @clicked="addEvent" :item="item" v-for="item in calendar.list" :key="item" />
     </div>
 </template>
 
@@ -23,7 +23,9 @@ export default {
     },
     created(){
         this.calendar = new Calendar();
-        this.list = this.calendar.getList()
+        //this.list = this.calendar.getList()
+        //this.calendar.setList(this.calendar.getList())
+        this.calendar.getList()
     },
     methods: {    
         previous(){

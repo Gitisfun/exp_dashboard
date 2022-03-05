@@ -1,6 +1,9 @@
 <template>
   <div>
-    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <div class="logo_content">
       <div class="logo">
         <i class="bx bxl-c-plus-plus"></i>
@@ -9,11 +12,19 @@
       <i class="bx bx-menu-alt-right" id="btn" @click="clicked"></i>
     </div>
     <ul class="nav_list">
-      <MenuItem @itemClicked="itemClicked" v-for="item in menuItems" :title="item.name" :icon="item.icon" :link="item.link" :key="item.id" />
+      <MenuItem
+        @itemClicked="itemClicked"
+        v-for="item in menuItems"
+        :title="item.name"
+        :icon="item.icon"
+        :link="item.link"
+        :key="item.id"
+      />
       <li id="log-out-box" @click="logout">
         <div class="logout-out-box">
           <router-link active-class="router-link-active" to="login">
-            <i :class="`bx bx-log-out`"></i> <span class="links_name">Uitloggen</span>
+            <i :class="`bx bx-log-out`"></i>
+            <span class="links_name">Uitloggen</span>
           </router-link>
         </div>
       </li>
@@ -23,7 +34,7 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
-import MenuItem from './MenuItem.vue';
+import MenuItem from "./MenuItem.vue";
 
 export default {
   name: "MenuSidebar",
@@ -83,7 +94,9 @@ export default {
           if (this.$route.meta.group == this.menuItems[i].group) {
             this.lastActiveGroup = this.currentActiveGroup;
             this.currentActiveGroup = this.menuItems[i].group;
-            this.menuItems[this.findById(this.lastActiveGroup)].isActive = false;
+            this.menuItems[
+              this.findById(this.lastActiveGroup)
+            ].isActive = false;
             this.menuItems[i].isActive = true;
           }
           if (this.$route.name == this.menuItems[i].name) {
@@ -100,14 +113,20 @@ export default {
       }
       return 0;
     },
-    logout(){
-      
-    }
+    logout() {},
   },
 };
 </script>
 
-<style>
+<style scoped>
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
 #btn {
   cursor: pointer;
 }
@@ -122,7 +141,7 @@ export default {
   transition: all 0.5s ease;
   overflow: hidden;
 }
-.sidebar.active .logout-out-box{
+.sidebar.active .logout-out-box {
   width: 240px;
 }
 </style>
