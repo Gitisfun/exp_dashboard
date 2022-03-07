@@ -3,6 +3,8 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Transactions from '../views/Transactions.vue'
 import Categories from '../views/Categories.vue'
+import History from '../views/History.vue'
+import Settings from '../views/Settings.vue'
 
 const routes = [
   {
@@ -38,6 +40,24 @@ const routes = [
     component: Categories,
     meta: {
       group: "Categories",
+      requiresAuth: true,
+    },
+  },
+  {
+    path: '/history',
+    name: 'History',
+    component: History,
+    meta: {
+      group: "History",
+      requiresAuth: true,
+    },
+  },
+  {
+    path: '/settings',
+    name: 'Settings',
+    component: Settings,
+    meta: {
+      group: "Settings",
       requiresAuth: true,
     },
   },

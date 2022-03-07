@@ -18,10 +18,26 @@ const menuList = [
     },
     {
       id: 3,
+      icon: "bx-calendar",
+      name: "History",
+      group: "History",
+      link: "/history",
+      isActive: false,
+    },
+    {
+      id: 4,
       icon: "bx-category",
       name: "Categories",
       group: "Categories",
       link: "/categories",
+      isActive: false,
+    },
+    {
+      id: 5,
+      icon: "bx-cog",
+      name: "Settings",
+      group: "Settings",
+      link: "/settings",
       isActive: false,
     },
   ];

@@ -7,7 +7,7 @@
     <div class="logo_content">
       <div class="logo">
         <i class="bx bxl-c-plus-plus"></i>
-        <div class="logo_name" style="margin-left: 10px">Dashboard</div>
+        <div class="logo_name" style="margin-left: 5px">Dashboard</div>
       </div>
       <i class="bx bx-menu-alt-right" id="btn" @click="clicked"></i>
     </div>

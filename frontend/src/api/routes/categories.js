@@ -1,29 +1,29 @@
 import httpClient from "../httpClient";
 
 
-class Categories {
+class CategoryRoutes {
 
   static END_POINT = "/categories";
 
-  static getAll() {
-    return httpClient.get(`${END_POINT}`);
+  static GET_ALL() {
+    return httpClient.get(`${CategoryRoutes.END_POINT}`);
   }
 
-  static get(id) {
-    return httpClient.get(`${END_POINT}/${id}`);
+  static GET(id) {
+    return httpClient.get(`${CategoryRoutes.END_POINT}/${id}`);
   }
 
-  static create(item) {
-    return httpClient.post(END_POINT, item);
+  static CREATE(item) {
+    return httpClient.post(CategoryRoutes.END_POINT, item);
   }
 
-  static update(id, item) {
-    return httpClient.put(`${END_POINT}/${id}`, item);
+  static UPDATE(id, item) {
+    return httpClient.put(`${CategoryRoutes.END_POINT}/${id}`, item);
   }
 
-  static delete(id) {
-    return httpClient.delete(`${END_POINT}/${id}`);
+  static DELETE(id) {
+    return httpClient.delete(`${CategoryRoutes.END_POINT}/${id}`);
   }
 }
 
-export default Categories
+export default CategoryRoutes;

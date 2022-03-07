@@ -1,7 +1,9 @@
 //import Notifications from "../logic/factories/notifications.js";
 
 class ApiCalls {
-  static getAll(requestHandler, params, responseHandler, context) {
+  
+  static getAll(requestHandler, params, responseHandler, context) { 
+    console.log(context);
     requestHandler(params)
       .then((res) => responseHandler(res))
       .catch((err) => {
@@ -13,6 +15,7 @@ class ApiCalls {
   }
 
   static getById(requestHandler, id, responseHandler, context) {
+    console.log(context);
     requestHandler(id)
       .then((res) => responseHandler(res))
       .catch((err) => {
@@ -24,6 +27,7 @@ class ApiCalls {
   }
 
   static getMultiple(requestList, responseHandler, context) {
+    console.log(context);
     Promise.all(requestList)
       .then((res) => responseHandler(res))
       .catch((err) => {

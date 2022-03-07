@@ -1,25 +1,28 @@
 <template>
   <div class="home">
     <div class="home-column-left">
-      <Calendar />
+      <IconBtn icon="bx-plus" color="#26de81"/>
+      <IconBtn icon="bx-plus" color="#4cd137"/>
+      <IconBtn icon="bx-plus" color="#44bd32"/>
+      <IconBtn icon="bx-plus" color="#2ecc71"/>
+      <IconBtn icon="bx-plus" color="#27ae60"/>
+      <IconBtn icon="bx-plus" color="#1abc9c"/>
+      <IconBtn icon="bx-user" />
     </div>
     <div class="home-column-right">
-      <RoundBtn />
     </div>
 
   </div>
 </template>
 
 <script>
-import RoundBtn from '../components/common/buttons/RoundBtn.vue'
+import IconBtn from '../components/common/buttons/IconBtn.vue'
 // @ is an alias to /src
-import Calendar from "../components/common/calendar/MyCalendar.vue"
 
 export default {
   name: 'Home',
   components: {
-    Calendar,
-    RoundBtn
+    IconBtn
   },
 }
 </script>
